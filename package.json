@@ -7,7 +7,8 @@
   "scripts": {
     "start": "lerna run start",
     "test": "lerna run test",
-    "dev": "lerna run dev"
+    "dev": "lerna run dev",
+    "build": "lerna run build"
   },
   "dependencies": {},
   "devDependencies": {
