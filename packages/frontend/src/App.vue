@@ -1,9 +1,14 @@
 <script setup lang="ts">
-import { Button } from '@/components/ui/button'
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import AppSidebar from "@/components/AppSidebar.vue";
 </script>
 
 <template>
-  <div>
-    <Button>Click me</Button>
-  </div>
+  <SidebarProvider>
+    <AppSidebar />
+    <main>
+      <SidebarTrigger />
+      <slot />
+    </main>
+  </SidebarProvider>
 </template>
