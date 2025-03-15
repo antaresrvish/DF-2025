@@ -9,9 +9,10 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarFooter
 } from "@/components/ui/sidebar"
 
-// Menu items.
+// Menu items (Settings removed from here)
 const items = [
   {
     title: "Home",
@@ -33,11 +34,6 @@ const items = [
     url: "#",
     icon: Search,
   },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-  },
 ];
 </script>
 
@@ -45,7 +41,7 @@ const items = [
   <Sidebar>
     <SidebarContent>
       <SidebarGroup>
-        <SidebarGroupLabel>Application</SidebarGroupLabel>
+        <SidebarGroupLabel>DATA FORCE 2025</SidebarGroupLabel>
         <SidebarGroupContent>
           <SidebarMenu>
               <SidebarMenuItem v-for="item in items" :key="item.title">
@@ -60,5 +56,17 @@ const items = [
         </SidebarGroupContent>
       </SidebarGroup>
     </SidebarContent>
+    <SidebarFooter>
+      <SidebarMenu>
+        <SidebarMenuItem>
+          <SidebarMenuButton asChild>
+            <a href="#">
+              <Settings />
+              <span>Settings</span>
+            </a>
+          </SidebarMenuButton>
+        </SidebarMenuItem>
+      </SidebarMenu>
+    </SidebarFooter>
   </Sidebar>
 </template>
