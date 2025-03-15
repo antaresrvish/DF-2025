@@ -41,7 +41,7 @@ const items = [
   <Sidebar>
     <SidebarContent>
       <SidebarGroup>
-        <SidebarGroupLabel>DATA FORCE 2025</SidebarGroupLabel>
+        <SidebarGroupLabel>DATA FORCE</SidebarGroupLabel>
         <SidebarGroupContent>
           <SidebarMenu>
               <SidebarMenuItem v-for="item in items" :key="item.title">
