@@ -5,13 +5,11 @@ import {
     MenubarItem,
     MenubarMenu,
     MenubarSeparator,
-    MenubarShortcut,
     MenubarTrigger,
 } from '@/components/ui/menubar'
 import { Separator } from '@/components/ui/separator';
 import { Input } from '@/components/ui/input'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 import { CogIcon } from "@heroicons/vue/24/outline";
 import { MoonIcon } from "@heroicons/vue/24/outline";
