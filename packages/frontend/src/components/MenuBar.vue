@@ -3,24 +3,18 @@ import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarSeparator, Me
 import { Separator } from '@/components/ui/separator';
 import { Input } from '@/components/ui/input'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
+
 import {
     Card,
     CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from '@/components/ui/card'
 import { Loader2 } from 'lucide-vue-next'
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
-import { CogIcon, MoonIcon, MagnifyingGlassIcon, UserIcon, LanguageIcon } from "@heroicons/vue/24/outline";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger, SheetFooter } from '@/components/ui/sheet'
+import { CogIcon, MoonIcon, MagnifyingGlassIcon, UserIcon, LanguageIcon, AcademicCapIcon } from "@heroicons/vue/24/outline";
 import { Button } from '@/components/ui/button'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger
-} from '@/components/ui/tooltip'
 
 import { useColorMode } from '@vueuse/core'
 const mode = useColorMode()
@@ -40,18 +34,9 @@ const mode = useColorMode()
                     <MenubarMenu class="w-full h-full">
                         <Sheet>
                             <SheetTrigger>
-                                <TooltipProvider>
-                                    <Tooltip>
-                                        <TooltipTrigger class="flex items-center justify-center">
-                                            <CogIcon class="h-6 w-6" />
-                                        </TooltipTrigger>
-                                        <TooltipContent>
-                                            <p>Tune your search experience</p>
-                                        </TooltipContent>
-                                    </Tooltip>
-                                </TooltipProvider>
+                                <CogIcon class="h-6 w-6" />
                             </SheetTrigger>
-                            <SheetContent>
+                            <SheetContent class="overflow-y-auto h-[100 vh]">
                                 <SheetHeader>
                                     <SheetTitle>Tune Search</SheetTitle>
                                     <SheetDescription>
@@ -60,7 +45,12 @@ const mode = useColorMode()
                                 </SheetHeader>
                                 <Card class="mt-5">
                                     <CardHeader>
-                                        <CardTitle>Search Level</CardTitle>
+                                        <CardTitle>
+                                            <span class="flex items-center">
+                                                <AcademicCapIcon class="h-6 w-6 mr-2"/>
+                                                Search Level
+                                            </span>
+                                        </CardTitle>
                                         <CardDescription>Select the level of the subjects that you want to search
                                         </CardDescription>
                                     </CardHeader>
@@ -93,11 +83,42 @@ const mode = useColorMode()
 
                                         </RadioGroup>
                                     </CardContent>
-                                    <CardFooter>
-                                        <Button>Ok</Button>
-                                    </CardFooter>
                                 </Card>
+                                <Card class="mt-5">
+                                    <CardHeader>
+                                        <CardTitle>
+                                            <span class="flex items-center">
+                                                <LanguageIcon class="h-6 w-6 mr-2"/>
+                                                Search Language
+                                            </span>
+                                        </CardTitle>
+                                        <CardDescription>Select the language of the subjects that you want to search
+                                        </CardDescription>
+                                    </CardHeader>
+                                    <CardContent>
+                                        <RadioGroup default-value="option-one">
+                                            <div class="flex items-center space-x-2">
+                                                <RadioGroupItem id="option-1" value="option-1" />
+                                                <Label for="option-1">Turkish</Label>
+                                            </div>
+
+                                            <div class="flex items-center space-x-2">
+                                                <RadioGroupItem id="option-2" value="option-2" />
+                                                <Label for="option-2">English</Label>
+                                            </div>
+
+                                            <div class="flex items-center space-x-2">
+                                                <RadioGroupItem id="option-3" value="option-3" />
+                                                <Label for="option-3">Russian</Label>
+                                            </div>
+                                        </RadioGroup>
+                                    </CardContent>
+                                </Card>
+                                <SheetFooter class="mt-5">
+                                    <Button class="w-full">Apply</Button>
+                                </SheetFooter>
                             </SheetContent>
+
                         </Sheet>
                     </MenubarMenu>
                 </span>
