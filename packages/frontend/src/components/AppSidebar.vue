@@ -12,7 +12,7 @@ import {
   SidebarFooter
 } from "@/components/ui/sidebar"
 
-// Menu items (Settings removed from here)
+
 const items = [
   {
     title: "Home",
@@ -38,7 +38,7 @@ const items = [
 </script>
 
 <template>
-  <Sidebar>
+  <Sidebar collapsible="icon" variant="floating">
     <SidebarContent>
       <SidebarGroup>
         <SidebarGroupLabel>DATA FORCE</SidebarGroupLabel>
