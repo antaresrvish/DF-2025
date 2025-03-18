@@ -21,8 +21,8 @@ const mode = useColorMode()
 </script>
 
 <template>
-    <Menubar class="flex py-6 m-2 bg-[hsl(var(--border))]">
-        <div class="justify-center flex-1 ml-1">
+    <Menubar class="flex m-2.5 bg-[hsl(var(--border))]">
+        <div class="justify-center flex-1">
             <div class="relative w-full items-center">
                 <Input id="search" type="text" placeholder="Search..." class="pl-10 pr-12 w-full" />
                 <span class="absolute start-0 inset-y-0 flex items-center justify-center px-2">
@@ -124,69 +124,7 @@ const mode = useColorMode()
                 </span>
             </div>
         </div>
-        <div class="items-center justify-end hidden">
-            <Menubar class="flex justify-end mr-1">
-                <MenubarMenu>
-                    <MenubarTrigger>
-                        <MoonIcon class="h-5 w-6" />
-                    </MenubarTrigger>
-                    <MenubarContent align="center">
-                        <MenubarItem @click="mode = 'light'">
-                            Light
-                        </MenubarItem>
-                        <MenubarItem @click="mode = 'dark'">
-                            Dark
-                        </MenubarItem>
-                        <MenubarItem @click="mode = 'auto'">
-                            System
-                        </MenubarItem>
-                    </MenubarContent>
-                </MenubarMenu>
-                <MenubarMenu>
-                    <MenubarTrigger>
-                        <LanguageIcon class="h-5 w-6" />
-                    </MenubarTrigger>
-                    <MenubarContent align="center">
-                        <MenubarItem>
-                            English
-                        </MenubarItem>
-                        <MenubarItem>
-                            Turkish
-                        </MenubarItem>
-                    </MenubarContent>
-                </MenubarMenu>
-                <MenubarMenu>
-                    <MenubarTrigger>
-                        <CogIcon class="h-5 w-6" />
-                    </MenubarTrigger>
-                    <MenubarContent align="center">
-                        <MenubarItem>
-                            New Tab
-                        </MenubarItem>
-                        <MenubarItem>New Window</MenubarItem>
-                        <MenubarSeparator />
-                        <MenubarItem>Share</MenubarItem>
-                        <MenubarSeparator />
-                        <MenubarItem>Print</MenubarItem>
-                    </MenubarContent>
-                </MenubarMenu>
-                <MenubarMenu>
-                    <MenubarTrigger>
-                        <UserIcon class="h-5 w-6" />
-                    </MenubarTrigger>
-                    <MenubarContent align="center">
-                        <MenubarItem>
-                            New Tab
-                        </MenubarItem>
-                        <MenubarItem>New Window</MenubarItem>
-                        <MenubarSeparator />
-                        <MenubarItem>Share</MenubarItem>
-                        <MenubarSeparator />
-                        <MenubarItem>Print</MenubarItem>
-                    </MenubarContent>
-                </MenubarMenu>
-            </Menubar>
-        </div>
+
 
     </Menubar>
 </template>
