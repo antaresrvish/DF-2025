@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarSeparator, MenubarTrigger } from '@/components/ui/menubar'
+import { Menubar, MenubarMenu } from '@/components/ui/menubar'
 import { Separator } from '@/components/ui/separator';
 import { Input } from '@/components/ui/input'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
@@ -13,11 +13,11 @@ import {
 } from '@/components/ui/card'
 import { Loader2 } from 'lucide-vue-next'
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger, SheetFooter } from '@/components/ui/sheet'
-import { CogIcon, MoonIcon, MagnifyingGlassIcon, UserIcon, LanguageIcon, AcademicCapIcon } from "@heroicons/vue/24/outline";
+import { CogIcon, MagnifyingGlassIcon, LanguageIcon, AcademicCapIcon } from "@heroicons/vue/24/outline";
 import { Button } from '@/components/ui/button'
 
-import { useColorMode } from '@vueuse/core'
-const mode = useColorMode()
+// import { useColorMode } from '@vueuse/core'
+// const mode = useColorMode()
 </script>
 
 <template>
