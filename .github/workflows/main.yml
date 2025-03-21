@@ -1,0 +1,44 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - production
+      - development
+  pull_request:
+    branches:
+      - production
+      - development
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Project
+        run: npm run build
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/production'
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to Server
+        run: |
+          echo "Deploying to production server..."
+          # Add deployment commands here
