@@ -12,7 +12,7 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
@@ -32,7 +32,7 @@ jobs:
   deploy:
     needs: build
     if: github.ref == 'refs/heads/production'
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
