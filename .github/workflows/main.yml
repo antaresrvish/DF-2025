@@ -45,9 +45,10 @@ jobs:
           USERNAME: ${{ secrets.VPS_USER }}
           KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd ~/knowAI
-            git pull origin production
-            npm install
-            npm run build
-            pm2 restart backend
-            pm2 restart frontend
+            # cd ~/knowAI
+            # git pull origin production
+            # npm install
+            # npm run build
+            # pm2 restart backend
+            # pm2 restart frontend
+            echo "hello world"
