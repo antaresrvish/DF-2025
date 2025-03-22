@@ -1,14 +1,12 @@
-name: CI/CD Pipeline
+name: pipeline
 
 on:
   push:
     branches:
       - production
-      - development
   pull_request:
     branches:
       - production
-      - development
 
 jobs:
   build:
@@ -45,10 +43,10 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # cd ~/knowAI
-            # git pull origin production
-            # npm install
-            # npm run build
-            # pm2 restart backend
-            # pm2 restart frontend
+            cd ~/knowAI
+            git pull origin production
+            npm install
+            npm run build
+            pm2 restart backend
+            pm2 restart frontend
             echo "Deployment Successful"
