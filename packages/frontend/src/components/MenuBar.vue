@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Menubar, MenubarMenu } from '@/components/ui/menubar'
 import { Separator } from '@/components/ui/separator';
 import { Input } from '@/components/ui/input'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
@@ -15,24 +14,19 @@ import { Loader2 } from 'lucide-vue-next'
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger, SheetFooter } from '@/components/ui/sheet'
 import { CogIcon, MagnifyingGlassIcon, LanguageIcon, AcademicCapIcon } from "@heroicons/vue/24/outline";
 import { Button } from '@/components/ui/button'
-
-//import { useColorMode } from '@vueuse/core'
-//const mode = useColorMode()
 </script>
 
 <template>
-    <Menubar class="flex m-2.5 bg-[hsl(var(--border))]">
-        <div class="justify-center flex-1">
-            <div class="relative w-full items-center">
-                <Input id="search" type="text" placeholder="Search..." class="pl-10 pr-12 w-full" />
+        <div class="justify-center flex-1 mt-2">
+            <div class="relative w-full md:w-2/3 items-center h-12">
+                <Input id="search" type="text" placeholder="Search..." class="pl-10 pr-12 w-full h-full" />
                 <span class="absolute start-0 inset-y-0 flex items-center justify-center px-2">
                     <MagnifyingGlassIcon class="size-6 text-muted-foreground" />
                     <Loader2 class="animate-spin" hidden />
                 </span>
                 <span class="absolute end-0 inset-y-0 flex items-center justify-center px-2">
                     <Separator orientation="vertical" class="mr-2 ml-2" />
-                    <MenubarMenu class="w-full h-full">
-                        <Sheet>
+                        <Sheet class="w-full h-full">
                             <SheetTrigger>
                                 <CogIcon class="h-6 w-6" />
                             </SheetTrigger>
@@ -120,11 +114,7 @@ import { Button } from '@/components/ui/button'
                             </SheetContent>
 
                         </Sheet>
-                    </MenubarMenu>
                 </span>
             </div>
         </div>
-
-
-    </Menubar>
 </template>
