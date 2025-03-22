@@ -41,9 +41,9 @@ jobs:
       - name: Deploy to VPS
         uses: appleboy/ssh-action@v1
         with:
-          HOST: ${{ secrets.VPS_HOST }}
-          USERNAME: ${{ secrets.VPS_USER }}
-          KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          HOST: from_secret: VPS_HOST
+          USERNAME: from_secret: VPS_USER
+          KEY: from_secret: SSH_PRIVATE_KEY
           script: |
             # cd ~/knowAI
             # git pull origin production
