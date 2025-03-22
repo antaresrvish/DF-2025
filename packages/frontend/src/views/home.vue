@@ -6,12 +6,12 @@ import MenuBar from "@/components/MenuBar.vue";
 </script>
 
 <template>
-    <SidebarProvider class="">
+    <SidebarProvider class="flex">
         <AppSidebar />
         <main>
             <SidebarTrigger class="mt-4" />
             <slot />
         </main>
-        <MenuBar class="w-full mr-12 ml-5" />
+        <MenuBar class="w-full mr-12 ml-5 flex items-center" />
     </SidebarProvider>
 </template>
