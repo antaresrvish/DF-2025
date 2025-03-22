@@ -16,8 +16,8 @@ import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTr
 import { CogIcon, MagnifyingGlassIcon, LanguageIcon, AcademicCapIcon } from "@heroicons/vue/24/outline";
 import { Button } from '@/components/ui/button'
 
-// import { useColorMode } from '@vueuse/core' cofkeo
-// const mode = useColorMode()
+//import { useColorMode } from '@vueuse/core'
+//const mode = useColorMode()
 </script>
 
 <template>

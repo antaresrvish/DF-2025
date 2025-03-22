@@ -10,7 +10,9 @@
     "dev": "lerna run dev",
     "build": "lerna run build"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@fastify/cors": "^11.0.0"
+  },
   "devDependencies": {
     "lerna": "^8.2.1"
   }

@@ -1,15 +1,22 @@
-import fastify from 'fastify'
+import Fastify from 'fastify';
+import cors from '@fastify/cors';
 
-const server = fastify()
+const fastify = Fastify({ logger: true });
 
-server.get('/ping', async (request, reply) => {
-  return 'pong\n'
-})
+fastify.register(cors, {
+  origin: '*', // Allow all origins (adjust as needed)
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+});
 
-server.listen({ port: 8080 }, (err, address) => {
+fastify.get('/', async (request, reply) => {
+  return { message: 'CORS enabled!' };
+});
+
+fastify.listen({ port: 3000, host: '0.0.0.0' }, (err, address) => {
   if (err) {
-    console.error(err)
-    process.exit(1)
+    fastify.log.error(err);
+    process.exit(1);
   }
-  console.log(`Server listening at ${address}`)
-})
+  console.log(`Server running at ${address}`);
+});
