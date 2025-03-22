@@ -41,7 +41,7 @@ const items = [
   <Sidebar collapsible="icon" variant="floating">
     <SidebarContent>
       <SidebarGroup>
-        <SidebarGroupLabel>DATA FORCE</SidebarGroupLabel>
+        <SidebarGroupLabel>Know.AI</SidebarGroupLabel>
         <SidebarGroupContent>
           <SidebarMenu>
               <SidebarMenuItem v-for="item in items" :key="item.title">
