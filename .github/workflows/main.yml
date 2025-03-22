@@ -39,11 +39,11 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Deploy to VPS
-        uses: appleboy/ssh-action@v1
+        uses: appleboy/ssh-action@v0.1.6
         with:
-          HOST: from_secret: VPS_HOST
-          USERNAME: from_secret: VPS_USER
-          KEY: from_secret: SSH_PRIVATE_KEY
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             # cd ~/knowAI
             # git pull origin production
@@ -51,4 +51,4 @@ jobs:
             # npm run build
             # pm2 restart backend
             # pm2 restart frontend
-            echo "hello world"
+            echo "Deployment Successful"
